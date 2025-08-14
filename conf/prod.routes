@@ -1,0 +1,4 @@
+->      /                                                  health.Routes
+GET     /guides/disa-service-guide           controllers.Default.redirect(to = "/guides/disa-service-guide/")
+GET     /guides/disa-service-guide/          controllers.Assets.at(path="/public", file="index.html")
+GET     /guides/disa-service-guide/*file     controllers.Assets.at(path="/public", file)
