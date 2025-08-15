@@ -1,9 +1,9 @@
 ---
-title: Digitalisation of ISAs end-to-end service guide
+title: Digitalisation of ISAs service guide
 weight: 1
 ---
 
-# Digitalisation of ISAs end-to-end service guide
+# Digitalisation of ISAs service guide
 
 Version 1.0 issued 1 January 2020
 ***
