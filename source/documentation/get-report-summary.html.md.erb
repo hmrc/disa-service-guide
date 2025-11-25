@@ -1,0 +1,26 @@
+---
+title: Get report summary | ISA Returns API service guide
+weight: 6
+---
+
+# Get report summary
+
+After you submit a monthly report, HMRC processes the data and generates a results summary, which provides high-level information about the submission.
+
+You can access a results summary only after the reporting window closes.
+
+Call the [Get report summary](http://p) endpoint to find out whether the results summary is available for a submitted report.
+
+To check the availability of a results summary, provide:
+
+- the Z-Reference
+- the tax year 
+- the report month
+- the correct `Accept` and `Authorization` headers
+
+If the request is successful, the response includes:
+
+- a URL to retrieve the results summary
+- pagination details, including total records and total pages
+
+If the results summary is not yet available or the report is not found, the API returns a `404 Not Found` response. 

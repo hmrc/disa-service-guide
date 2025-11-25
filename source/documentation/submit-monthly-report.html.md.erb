@@ -1,0 +1,63 @@
+---
+title: Submit monthly report | ISA Returns API service guide
+weight: 5
+---
+
+# Submit monthly report
+
+To submit a monthly report, you must follow a two-step process:
+
+1. Submit one or more batches of account records.
+2. Mark the report as complete when all records have been submitted.
+
+Both steps must be completed in order. A report is considered submitted only after it has been marked as complete, and it cannot be amended after submission.
+
+## Submit monthly report data
+
+Call the [Submit monthly report data](http://y) endpoint to upload a batch of account records. A batch is a single payload containing multiple records for the specified monthly report.
+
+The payload size of each request must not exceed 10 MB.
+
+To submit a batch, provide:
+
+- the Z-Reference
+- the tax year 
+- the report month
+- the correct `Accept` and `Authorization` headers
+- the account records (the required fields depend on ISA type)
+
+The API checks whether the reporting window is open and whether a report has already been submitted for the specified tax year and report month. If either condition is not met, the API returns a `403 Forbidden` response.
+
+If the request is permitted:
+
+- the payload is validated against the expected structure to prevent invalid or incomplete data from being submitted
+- business validation rules are not applied at this stage
+
+If structural validation fails, the API returns a `400 Bad Request` response. For example, a missing National Insurance number or account number will cause the request to fail. Valid records will be processed only after the report is marked as complete.
+
+A successful submission returns a `204 No Content` response.
+
+Submit all data batches before completing the monthly report.
+
+## Declare monthly report complete
+
+Call the [Declare monthly report as complete](http://z) endpoint to confirm that all data has been submitted.
+
+Declaring a report as complete is a legal confirmation that your monthly reporting obligations are met. It confirms that all required data has been filed by the deadline, but it is not an attestation that the submitted data is correct. After this step, no further data can be added for that month. 
+
+To complete the submission, provide:
+
+- the Z-Reference
+- the tax year 
+- the report month
+- the correct `Accept` and `Authorization` headers
+
+The API checks whether the reporting window is open and whether a return has already been submitted for the specified tax year and report month. If either condition is not met, the API returns a `403 Forbidden` response.
+
+If the submission completes successfully, the response includes:
+
+- a confirmation that the report is complete
+- a URL to retrieve the results summary after the reporting window closes
+- a box ID for the Push-Pull Notifications Service (PPNS)
+
+After the monthly report is complete and the reporting window closes, HMRC will begin a process that reconciles your submission against other ISA managers' submissions. This will involve validation against business rules and checks on each investor's eligibility and their annual ISA subscription limits.

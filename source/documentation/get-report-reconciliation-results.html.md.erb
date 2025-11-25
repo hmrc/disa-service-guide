@@ -1,0 +1,28 @@
+---
+title: Get report reconciliation results | ISA Returns API service guide
+weight: 7
+---
+
+# Get report reconciliation results
+
+After the results summary is available, you can retrieve the reconciliation results for the monthly report. These show which records were accepted and which were rejected, including error messages where applicable.
+
+If any records need to be corrected, include the updated versions in your next monthly report.
+
+Call the [Get report reconciliation results](http://q) endpoint to retrieve reconciliation results for a submitted report. The API returns results in paginated batches.
+
+To retrieve validation results, provide:
+
+- the Z-Reference
+- the tax year 
+- the report month
+- the correct `Accept` and `Authorization` headers
+
+Optionally, include a page query parameter to request a specific page of results.
+
+If the request is successful, the response includes:
+
+- pagination information, including page number, total pages, and total records
+- the reconciliation results for the current page, including record-level identifiers and any reconciliation errors
+
+If the reconciliation results are not yet available, or if the specified page or report is not found, the API returns a `404 Not Found` response.

@@ -1,0 +1,68 @@
+---
+title: Before you start | ISA Returns API service guide
+weight: 2
+---
+
+# Before you start
+
+Learn how the ISA Returns API works and what your organisation needs to consider before using the API.
+
+## API subscription model
+
+You must subscribe each application to the API before it can access the API's endpoints.
+
+## API access control
+
+The ISA Returns API is a Controlled Access API. Endpoints are visible only to applications that are subscribed to it. To subscribe, you must contact the Software Developer Support Team.
+
+## API versioning
+
+For your application to be able to call a particular version of one of our APIs, you must:
+
+- confirm that the version is visible on the API's documentation page
+- subscribe your application to that version
+- set the correct `Accept` header in your API requests
+
+For details on versioning, see the [Reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/reference-guide#versioning).
+
+## API rate limiting
+
+Each ISA manager must register a single application with HMRC. This application is identified during the OAuth 2.0 flow and used for subsequent API calls.
+
+The ISA Returns API has a rate limit of 3 requests per second per ISA manager. You cannot request an increase.
+
+If you exceed this limit, you will receive a `429 Too Many Requests` response. Your application should pause briefly and retry the request. To avoid further limits:
+
+- follow software design best practices
+- avoid batching large volumes unnecessarily
+- use randomised backoff timing to reduce spikes
+
+For details on rate limiting, see the [Reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/reference-guide#rate-limiting).
+
+## Authentication
+
+Use your organisation's Government Gateway user ID to authenticate with HMRC. This grants authority to your application for the required scopes. HMRC issues an OAuth 2.0 access token, which must be included in requests to user-restricted endpoints.
+
+Tokens expire after four hours. You must then request a new one.
+
+For details on user-restricted endpoints, see the [Authorisation](https://developer.service.hmrc.gov.uk/api-documentation/docs/authorisation/user-restricted-endpoints) guide.
+
+## Error handling
+
+No system guarantees 100% error-free performance, so services calling our APIs need to be designed with failure in mind. There are several strategies to mitigate the errors that do occur.
+
+### 5XX errors
+
+If the API returns a `5XX` error, you should retry the request. These errors are usually temporary.
+
+Do not retry `501 Not Implemented` errors. This means the endpoint does not exist or is incorrect. Check the URL.
+
+Use an exponential backoff strategy. For example, try 3 to 5 attempts over 1 to 2 minutes. Consider using a circuit breaker pattern.
+
+### 4XX errors
+
+`4XX` errors indicate a problem with the request. Check the error message in the response payload and fix the request before retrying.
+
+A `400` error may mean the payload is invalid. Check against the schema. A `406` error means the `Accept` header is missing or incorrect.
+
+If you repeatedly receive `4XX` errors, contact the Software Developer Support Team.
