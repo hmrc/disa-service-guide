@@ -1,0 +1,27 @@
+---
+title: Use the API for monthly reports | ISA Returns API service guide
+weight: 4
+---
+
+# Use the API for monthly reports
+
+Learn how the ISA Returns API fits into the monthly reporting cycle and which endpoints to use at each stage.
+
+## Connect the API to monthly cycle
+
+This diagram shows how ISA managers or third parties use application software to prepare, submit, and review monthly reconciliation results. The software connects to the ISA Returns API to send data to HMRC and retrieve reconciliation results.
+
+<img src="/documentation/figures/isa_returns_api_reports_flow.svg" alt="Diagram showing how ISA managers or third parties use application software to submit monthly reports to HMRC and retrieve reconciliation results. The software connects to the ISA Returns API. Reconciliation starts after the reporting window closes." style="width:600px;"/>
+
+## Check which API endpoints to use
+
+When you use the API, you must call different endpoints at each stage of the reporting process.
+
+This table shows which call to make at each step.
+
+| Step                                 | Action                            | Endpoint                           |
+| ------------------------------------ | --------------------------------- | ---------------------------------- |
+| Submit monthly report data           | Upload a batch of account records | `POST /monthly/{zReference}/{taxYear}/{month}` |
+| Declare monthly report as complete   | Confirm that all data for a monthly report has been submitted, and thus trigger reconciliation and processing after reporting window closes | `POST /monthly/{zReference}/{taxYear}/{month}/declaration` |
+| Get report summary                   | Find out whether the results summary is available for a submitted report | `GET /monthly/{zReference}/{taxYear}/{month}/results/summary` |
+| Get report reconciliation results    | Retrieve reconciliation results for a submitted report | `GET /monthly/{zReference}/{taxYear}/{month}/results` |

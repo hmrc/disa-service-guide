@@ -1,5 +1,5 @@
 # Human read-able name for this site, displayed in the header bar
-service_name: Digitalisation of ISAs service guide
+service_name: ISA Returns API service guide
 
 # The route that will be used to access this site (with tailing slash)
 service_link: /guides/disa-service-guide/
