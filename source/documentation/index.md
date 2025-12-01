@@ -41,7 +41,7 @@ This diagram shows how ISA managers or third-party organisations use application
 
 This diagram shows the full monthly reporting cycle, from preparing data to reviewing reconciliation results. ISA managers or third parties prepare and submit data, HMRC validates the report, and the results are retrieved and acted on by the submitting organisation.
 
-<img src="/source/images/isa_returns_api_monthly_reporting_cycle.svg" alt="Diagram showing five steps in the monthly reporting cycle. The ISA manager or third party prepares and submits a report. HMRC validates it. The ISA manager or third party retrieves the results and takes any required action." style="width:600px; max-height:325px; " />
+<img src="/source/images/test.svg" alt="Diagram showing five steps in the monthly reporting cycle. The ISA manager or third party prepares and submits a report. HMRC validates it. The ISA manager or third party retrieves the results and takes any required action." style="width:600px; max-height:325px; " />
 
 ## End-to-end user journeys
 
