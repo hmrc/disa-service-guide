@@ -37,11 +37,11 @@ The API is designed for integration into internal systems or third-party softwar
 
 This diagram shows how ISA managers or third-party organisations use application software to submit monthly reports to HMRC using the ISA Returns API.
 
-<img src="/images/isa_returns_api_overview.svg" alt="Diagram showing a user from an ISA manager or third-party organisation submitting a monthly report via application software to HMRC using the ISA Returns API. A developer from the same organisation builds and maintains the software." style="width:600px; max-height:300px; " />
+<img src="documentation/images/isa_returns_api_overview.svg" alt="Diagram showing a user from an ISA manager or third-party organisation submitting a monthly report via application software to HMRC using the ISA Returns API. A developer from the same organisation builds and maintains the software." style="width:600px; max-height:300px; " />
 
 This diagram shows the full monthly reporting cycle, from preparing data to reviewing reconciliation results. ISA managers or third parties prepare and submit data, HMRC validates the report, and the results are retrieved and acted on by the submitting organisation.
 
-<img src="/images/isa_returns_api_monthly_reporting_cycle.svg" alt="Diagram showing five steps in the monthly reporting cycle. The ISA manager or third party prepares and submits a report. HMRC validates it. The ISA manager or third party retrieves the results and takes any required action." style="width:600px; max-height:325px; " />
+<img src="documentation/images/isa_returns_api_monthly_reporting_cycle.svg" alt="Diagram showing five steps in the monthly reporting cycle. The ISA manager or third party prepares and submits a report. HMRC validates it. The ISA manager or third party retrieves the results and takes any required action." style="width:600px; max-height:325px; " />
 
 ## End-to-end user journeys
 
