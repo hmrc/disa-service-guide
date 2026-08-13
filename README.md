@@ -1,12 +1,8 @@
-# Service Guides/Roadmaps
+# ISA Returns API service guide
 
-## Overview
+This repository contains the service guide for the ISA Returns API. The guide explains how HMRC-approved ISA managers can prepare and submit monthly ISA subscription reports and retrieve reconciliation results.
 
-Service Guides are created using GDS [Tech Docs Templates](https://github.com/alphagov/tech-docs-template).
-The generated HTML files are then served by a simple Scala Play application so that they can be deployed
-as an MDTP microservice.
-
-Examples of Service Guides can be seen in [API Documentation in Developer Hub](https://developer.service.hmrc.gov.uk/api-documentation/docs/api).
+The guide is built using the GDS [Tech Docs Template](https://github.com/alphagov/tech-docs-template). The generated HTML files are served by a Scala Play application for deployment as an MDTP microservice.
 
 ## Getting started
 
