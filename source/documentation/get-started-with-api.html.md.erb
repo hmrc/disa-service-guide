@@ -5,7 +5,8 @@ weight: 3
 
 # Get started with the API
 
-To use the ISA Returns API, you must register an application in the [HMRC Developer Hub](https://developer.service.hmrc.gov.uk/), request access to the API, and configure authentication.
+To use the ISA Returns API, you must register an application in the
+[HMRC Developer Hub](https://developer.service.hmrc.gov.uk/), request access to the API, and configure authentication.
 
 You must first integrate and test your software in the sandbox before requesting production access.
 
@@ -13,11 +14,13 @@ Follow the steps below to get started.
 
 ## Create a Developer Hub account
 
-You need a Developer Hub account to register and manage your applications. If you do not already have one, [register for an account](https://developer.service.hmrc.gov.uk/developer/registration) before continuing.
+You need a Developer Hub account to register and manage your applications. If you do not already have one,
+    [register for an account](https://developer.service.hmrc.gov.uk/developer/registration) before continuing.
 
 ## Register your application for sandbox testing
 
-Register a sandbox application in the Developer Hub. This generates a client ID and secret for use in the sandbox environment.
+Register a sandbox application in the Developer Hub. This generates a client ID and secret for use in the sandbox
+environment.
 
 You will use this application to:
 
@@ -28,25 +31,33 @@ You will use this application to:
 Use the sandbox base URL in your application:
 [https://test-api.service.hmrc.gov.uk](https://test-api.service.hmrc.gov.uk).
 
-You must also create one or more test Government Gateway user IDs to authenticate against user-restricted endpoints. These can be created in the Developer Hub.
+You must also create one or more test Government Gateway user IDs to authenticate against user-restricted endpoints.
+These can be created in the Developer Hub.
 
 For more information, see [Testing in the sandbox](https://developer.service.hmrc.gov.uk/api-documentation/docs/testing).
 
 ## Request access to API
 
-The ISA Returns API is a restricted-access API. Its endpoints are visible only to authorised and subscribed applications. Because it is a restricted-access API, you must request access before you can subscribe your application.
+The ISA Returns API is a restricted-access API. Its endpoints are visible only to authorised and subscribed applications.
+Because it is a restricted-access API, you must request access before you can subscribe your application.
 
-To request access, you must:
+To request access, you must have a Developer Hub account with a registered software application and satisfy either of
+the following:
 
-- be an employee of an organisation listed on the [ISA manager register (GOV.UK)](https://www.gov.uk/government/publications/list-of-individual-savings-account-isa-managers-approved-by-hmrc/registered-individual-savings-account-isa-managers) or
+- be an employee of an organisation listed on the
+[ISA manager register (GOV.UK)](https://www.gov.uk/government/publications/list-of-individual-savings-account-isa-managers-approved-by-hmrc/registered-individual-savings-account-isa-managers)
 - be part of a third-party organisation with an existing relationship with a listed ISA manager
-- have a Developer Hub account with a registered software application
 
-If you are an ISA manager and your organisation is not listed on the register, please check [how to apply for ISA manager status (GOV.UK)](https://www.gov.uk/guidance/apply-to-be-an-isa-manager).
+If you are an ISA manager and your organisation is not listed on the register, please check
+[how to apply for ISA manager status (GOV.UK)](https://www.gov.uk/guidance/apply-to-be-an-isa-manager).
 
-If you are a third-party organisation, HMRC may ask you to provide evidence of your organisation's relationship with the ISA manager to confirm eligibility.
+If you are a third-party organisation, HMRC may ask you to provide evidence of your organisation's relationship with
+the ISA manager to confirm eligibility.
 
-If you do not have a Developer Hub account, you can [register for an account on GOV.UK](https://developer.service.hmrc.gov.uk/developer/registration). The account must use a work email address.
+If you do not have a Developer Hub account, you can
+[register for an account on GOV.UK](https://developer.service.hmrc.gov.uk/developer/registration).
+
+The account must use a work email address.
 
 Once your Developer Hub account and software application are set up:
 
@@ -60,13 +71,16 @@ Once your Developer Hub account and software application are set up:
 
 HMRC may contact you to discuss your request and confirm eligibility.
 
-If you are not signed in, or access has not yet been granted, the Endpoints section will not display a link. You may see 'Not applicable' or 'Request access' instead.
+If you are not signed in, or access has not yet been granted, the Endpoints section will not display a link.
+You may see 'Not applicable' or 'Request access' instead.
 
 ## Subscribe your application to API
 
-If your access is approved, you will receive a confirmation email, and your software application will be subscribed to the API.
+If your access is approved, you will receive a confirmation email, and your software application will be subscribed to
+the API.
 
-If you are not familiar with subscriptions or API visibility, see the [Reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/reference-guide#api-access).
+If you are not familiar with subscriptions or API visibility, see the
+[Reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/reference-guide#api-access).
 
 ## Configure authentication
 
@@ -78,9 +92,11 @@ The ISA Returns API uses OAuth 2.0 with user-restricted scopes. In the sandbox e
 
 Tokens expire after 4 hours and must then be refreshed.
 
-Test failure scenarios such as a user not granting authority during the OAuth flow. This ensures your application handles all outcomes correctly.
+Test failure scenarios such as a user not granting authority during the OAuth flow. This ensures your application
+handles all outcomes correctly.
 
-For full guidance, see the [Authorisation](https://developer.service.hmrc.gov.uk/api-documentation/docs/authorisation) guide.
+For full guidance, see the [Authorisation](https://developer.service.hmrc.gov.uk/api-documentation/docs/authorisation)
+guide.
 
 ## Start using API in production
 
@@ -92,14 +108,16 @@ When your integration is complete and you are ready to go live:
 
 Each production application receives its own client ID and credentials.
 
-For guidance on production access, see the [Getting started](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub) guide.
+For guidance on production access, see the
+[Getting started](https://developer.service.hmrc.gov.uk/api-documentation/docs/using-the-hub) guide.
 
 Use the production base URL:
 [https://api.service.hmrc.gov.uk](https://api.service.hmrc.gov.uk).
 
 When your application is in production, you must submit reports each month using the same process.
 
-Support for ongoing use follows standard HMRC practices for APIs. Any future changes to the ISA Returns service will be communicated by the Software Developer Support Team.
+Support for ongoing use follows standard HMRC practices for APIs. Any future changes to the ISA Returns service will
+be communicated by the Software Developer Support Team.
 
 ## Use the correct headers
 

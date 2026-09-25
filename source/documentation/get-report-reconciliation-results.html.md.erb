@@ -1,28 +1,34 @@
 ---
 title: Get report reconciliation results | ISA Returns API service guide
-weight: 7
+weight: 6
 ---
 
 # Get report reconciliation results
 
-After the results summary is available, you can retrieve the reconciliation results for the monthly report. These show which records were accepted and which were rejected, including error messages where applicable.
+After the results summary is available, you can retrieve the reconciliation results for the monthly report.
+Depending on the notification process selected, you will either be notified via PPNS using the callback URL configured
+while subscribing to the ISA Returns API or you can query the PPNS API directly using the box ID.
+
+The reconciliation results show which records were accepted and which were rejected, including error messages where
+applicable.
 
 If any records need to be corrected, include the updated versions in your next monthly report.
 
-Call the [Get report reconciliation results](http://q) endpoint to retrieve reconciliation results for a submitted report. The API returns results in paginated batches.
+Use the ‘Get report reconciliation results’ endpoint to retrieve reconciliation results for a submitted report using
+cursor pagination. The API returns results in paginated batches.
 
 To retrieve validation results, provide:
 
 - the Z-Reference
-- the tax year 
-- the report month
-- the correct `Accept` and `Authorization` headers
+- the correct `Accept` header and `Authorization header` in your API requests
 
-Optionally, include a page query parameter to request a specific page of results.
+Optionally, include a batch query parameter such as the cursor or limit query parameters to request a specific set of
+results.
 
 If the request is successful, the response includes:
 
-- pagination information, including page number, total pages, and total records
-- the reconciliation results for the current page, including record-level identifiers and any reconciliation errors
+- current batch details including any cursor and limit query parameter relevant information, which are optional
+- the reconciliation results for the current batch, including record-level identifiers and any reconciliation errors
 
-If the reconciliation results are not yet available, or if the specified page or report is not found, the API returns a `404 Not Found` response.
+If the reconciliation results are not yet available, or if the specified batch or report is not found, the API returns
+an error response to indicate the same.
