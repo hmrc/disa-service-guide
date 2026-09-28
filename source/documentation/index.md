@@ -67,12 +67,12 @@ third-party organisation submitting a monthly report via application software to
 A developer from the same organisation builds and maintains the software." style="width:600px; max-height:489px"/>
 
 This diagram shows the full monthly reporting cycle, from preparing data to reviewing reconciliation results. ISA 
-managers or third parties prepare and submit data, HMRC validates the report, and the results are retrieved and acted 
+managers or third-parties prepare and submit data, HMRC validates the report, and the results are retrieved and acted 
 on by the submitting organisation.
 
 <img src="documentation/images/isa-returns-api-monthly-reporting-cycle.png" alt="Diagram showing five steps in 
-the monthly reporting cycle. The ISA manager or third party prepares and submits a report. HMRC validates it. 
-The ISA manager or third party retrieves the results and takes any required action." style="width:523px; max-height:410px" />
+the monthly reporting cycle. The ISA manager or third-party prepares and submits a report. HMRC validates it. 
+The ISA manager or third-party retrieves the results and takes any required action." style="width:523px; max-height:410px" />
 
 ## ISA Returns API behaviour
 
@@ -98,7 +98,8 @@ API returns a success response.
 declaration submission failure or a successful response. The success response is returned together with the Push Pull 
 Notifications Service (PPNS) box ID. 
 4. Reconciliation flow - once the monthly report is complete and the reporting window is closed, your submissions will 
-be processed. PPNS will then notify you via the callback URL, when the reconciliation report is ready.
+be processed. PPNS will then notify you via the callback URL, if a reconciliation report is available which is a 
+compilation of the rejected records.
 5. Download reconciliation report - once notified, you can retrieve the reconciliation results for the monthly report 
 using cursor pagination.
 

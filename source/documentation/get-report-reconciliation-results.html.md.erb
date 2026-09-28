@@ -5,12 +5,11 @@ weight: 6
 
 # Get report reconciliation results
 
-After the results summary is available, you can retrieve the reconciliation results for the monthly report.
-Depending on the notification process selected, you will either be notified via PPNS using the callback URL configured
-while subscribing to the ISA Returns API or you can query the PPNS API directly using the box ID.
+After the results summary is available, you can retrieve the reconciliation results for the monthly report. Depending
+on the notification process selected, you will either be notified via PPNS using the callback URL configured while
+subscribing to the ISA Returns API or you can query the PPNS API directly using the box ID.
 
-The reconciliation results show which records were accepted and which were rejected, including error messages where
-applicable.
+The reconciliation report shows the rejected records, including any error messages where applicable.
 
 If any records need to be corrected, include the updated versions in your next monthly report.
 
@@ -32,3 +31,5 @@ If the request is successful, the response includes:
 
 If the reconciliation results are not yet available, or if the specified batch or report is not found, the API returns
 an error response to indicate the same.
+
+Note: If the submitted batch of records do not contain any errors, then no reconciliation report will be generated.

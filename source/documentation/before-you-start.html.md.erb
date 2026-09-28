@@ -21,8 +21,8 @@ To subscribe, you must contact the Software Developer Support Team.
 ISA Returns API follows a simplified variation of the semantic versioning to manage changes and maintain compatibility
 for API consumers. See our [reference guide](/api-documentation/docs/api/service/disa-returns) for more on versioning.
 
-Users should test and validate against the appropriate API version before deploying to production environments. For your
-application to be able to call a particular version of one of our API, you must:
+Users should test and validate against the appropriate API version before requesting access to deploy to the production
+environment. To call a specific version of the ISA Returns API, you must:
 
 - confirm that the version is visible on the API’s documentation page
 - subscribe your application to that version
@@ -36,9 +36,6 @@ For details on versioning, see the
 [Reference guide](https://developer.service.hmrc.gov.uk/api-documentation/docs/reference-guide#versioning).
 
 ## API rate limiting
-
-Each ISA manager must register a single application with HMRC. This application is identified during the OAuth 2.0 flow
-and used for subsequent API calls.
 
 The ISA Returns API has a rate limit of 3 requests per second per ISA manager. You cannot request an increase.
 
